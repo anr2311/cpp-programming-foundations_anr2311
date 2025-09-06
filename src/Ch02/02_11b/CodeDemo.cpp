@@ -7,20 +7,20 @@
 
 int main(){
     int fahrenheit = 100;
-    int celsius;
+    float celsius;
 
-    celsius = fahrenheit;
+    celsius = (5.0/9.0) * (fahrenheit - 32);
 
     std::cout << std::endl;
     std::cout << "Fahrenheit: " << fahrenheit << std::endl;
-    std::cout << "Celsius   : " << celsius << std::endl;
+    std::cout << "Celsius   : " << static_cast<float>(celsius) << std::endl;
 
     float weight = 10.99;
     
     std::cout << std::endl;
     std::cout << "Float          : " << weight << std::endl;
-    std::cout << "Integer part   : " << weight << std::endl;
-    std::cout << "Fractional part: " << weight << std::endl;
+    std::cout << "Integer part   : " << static_cast<int32_t>(weight) << std::endl;
+    std::cout << "Fractional part: " << (weight - static_cast<int32_t>(weight)) << std::endl;
 
     std::cout << std::endl << std::endl;
     return 0;
