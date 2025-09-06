@@ -13,6 +13,7 @@ int main(){
     int sound = 8;
     asset_type asset;
 
+    /* Here there are 3 'sound' identifiers */
     asset = asset_type::sound; 
 
     std::cout << "asset_value = " << (int)asset << std::endl;
