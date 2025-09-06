@@ -5,14 +5,17 @@
 #include <iostream>
 #include <cstdint>
 
-enum asset_type {texture, sound, animation, script};
+// strong typed enums (or) scoped enums:
+enum class asset_type {texture, sound, animation, script};
+enum class menu_section {bg, music, sound, controls, texture};
 
 int main(){
-    int asset_value;
+    int sound = 8;
+    asset_type asset;
 
-    asset_value = sound;
+    asset = asset_type::sound; 
 
-    std::cout << "asset_value = " << asset_value << std::endl;
+    std::cout << "asset_value = " << (int)asset << std::endl;
 
     std::cout << std::endl << std::endl;
     return 0;
