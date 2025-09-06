@@ -18,7 +18,7 @@ int main(){
     
     game_characters buddy;
 
-    buddy.name = "ANR";
+    buddy.name = "ADI";
     buddy.level = 100;
     buddy.role = character_role::sidekick;
 
