@@ -7,8 +7,17 @@
 
 int main(){
     std::vector<int> lapTimes = {92, 85, 88, 90, 87};
-    float average;
+    float average = 0;
+
+    auto ptr = lapTimes.begin();
+
+    for (; ptr != lapTimes.end(); ptr++)
+    {
+        average += *ptr;
+    }
+
+    average /= lapTimes.size();
     
-    std::cout << std::endl << std::endl;
+    std::cout << "The average is :" << average << std::endl << std::endl;
     return 0;
 }

@@ -16,6 +16,24 @@ int main(){
     std::cin >> operation;
 
     // switch goes here
+    switch (operation)
+    {
+        case '+':
+            result = operand_1 + operand_2;
+            break;
+        case '-':
+            result = operand_1 - operand_2;
+            break;
+        case '*':
+            result = operand_1 * operand_2;
+            break;
+        case '/':
+            result = operand_1 / operand_2;
+            break;
+        default:
+            std::cout << "Unsupported operator " << operation << std::endl;           
+            break;
+    }
 
     std::cout << "The result is " << result << std::endl;
     
