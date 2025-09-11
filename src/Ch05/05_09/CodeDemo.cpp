@@ -15,7 +15,8 @@ struct Resource{
 double CalculateTotalCost(std::vector<Resource> resources){
     double result = 0.0;
     
-    // Write your code here
+    /* range-based for loop */
+    /* The first is a variable declaration which will hold an element in a sequence. The second is the sequence to traverse */
     for (auto x : resources)
     {
         if (x.type == 'B')
