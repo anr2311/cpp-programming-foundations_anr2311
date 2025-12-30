@@ -27,6 +27,7 @@ int main(){
         std::cout << playerScores[i] << " ";
         i++;
     } while(i < playerScores.size());
+    
     std::cout << std::endl;
     
     std::cout << std::endl << std::endl;
