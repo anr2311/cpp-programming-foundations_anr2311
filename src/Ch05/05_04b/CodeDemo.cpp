@@ -12,6 +12,8 @@ int main(){
 
     auto scorePtr = playerScores.begin();
 
+    printf("Size of the playerScores vector: %zu\n", playerScores.size());
+
     while (scorePtr != playerScores.end())
     {
         std::cout << *scorePtr << " ";
@@ -27,7 +29,7 @@ int main(){
         std::cout << playerScores[i] << " ";
         i++;
     } while(i < playerScores.size());
-    
+
     std::cout << std::endl;
     
     std::cout << std::endl << std::endl;

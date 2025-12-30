@@ -21,7 +21,7 @@ Inventory::~Inventory()
 }
 
 // add item to inventory
-void Inventory::addItem(const std::string& item)
+Inventory& Inventory::operator+=(const std::string& item)
 {
     if (items->size() < capacity)
     {
@@ -31,9 +31,10 @@ void Inventory::addItem(const std::string& item)
     {
         std::cout << "Inventory full! Cannot add item: " << item << std::endl;
     }
+    return *this;
 }
 // remove item from inventory
-void Inventory::removeItem(const std::string& item)
+Inventory& Inventory::operator-=(const std::string& item)
 {
     auto it = std::find(items->begin(), items->end(), item);
     if (it != items->end())
@@ -44,9 +45,10 @@ void Inventory::removeItem(const std::string& item)
     {
         std::cout << "Item not found in inventory: " << item << std::endl;
     }
+    return *this;
 }
 // access items by index
-std::string Inventory::getItem (int index) const // const prevents user from modifying anything inside func
+std::string Inventory::operator[](int index) const // const prevents user from modifying anything inside func
 {
     if (index >=0 && index < items->size())
     {
@@ -79,21 +81,21 @@ int main(){
     Inventory myInventory(5);
 
     //add 5 items
-    myInventory.addItem("Health Potion");
-    myInventory.addItem("Strength Potion");
-    myInventory.addItem("Magic Potion");
-    myInventory.addItem("Sword");
-    myInventory.addItem("Shield");
+    myInventory += ("Health Potion");
+    myInventory += ("Strength Potion");
+    myInventory += ("Magic Potion");
+    myInventory += ("Sword");
+    myInventory += ("Shield");
     
     //remove some item
-    myInventory.removeItem("Sword");
+    myInventory -= ("Sword");
 
     //display the item count
     printf("Item Count: %d", myInventory.getItemCount());
     std::cout << std::endl;
 
     //access item by index
-    std::cout << "Item at 2: " << myInventory.getItem(2);
+    std::cout << "Item at 2: " << myInventory[2];
     std::cout << std::endl;
 
     //display the inventory
