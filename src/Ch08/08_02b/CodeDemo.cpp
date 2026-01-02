@@ -16,6 +16,11 @@ int main(){
     std::cout << size_in_bits('f') << std::endl;   // Character
     std::cout << size_in_bits(32.1f) << std::endl; // Float
     std::cout << size_in_bits(32.1) << std::endl;  // Double
+
+    std::cout << size_in_bits((short)32) << std::endl; //short
+    std::cout << size_in_bits((long)32) << std::endl; //long
+    std::cout << size_in_bits(std::string("anr")) << std::endl; //string
+    std::cout << size_in_bits(true) << std::endl; //boolean
     
     std::cout << std::endl << std::endl;
     return 0;
